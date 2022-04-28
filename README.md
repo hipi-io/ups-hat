@@ -1,3 +1,6 @@
+## One-liner installation with defaults:
+  curl https://raw.githubusercontent.com/Martin-HiPi/ups-hat/main/scripts/install-UPS.sh | bash
+
 ## bash script to talk to the ups board
 
 #change the permissions for the script 
