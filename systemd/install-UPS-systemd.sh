@@ -5,7 +5,7 @@
 ##################################################################
 
 # Install git onto your pi
-#sudo apt update; sudo apt install git gpiod -y
+sudo apt update; sudo apt install git gpiod -y
 
 # Clone the shell script from the HiPi-io ups-hat repository
 git clone https://github.com/hipi-io/ups-hat.git  # Production repo
