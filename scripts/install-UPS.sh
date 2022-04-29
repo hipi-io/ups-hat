@@ -14,10 +14,11 @@ git clone https://github.com/hipi-io/ups-hat
 cd ups-hat/scripts
 
 # Make the script executable
-sudo chmod +x ups.sh
+sudo chmod -v +x ups.sh
+sudo chmod -v +x ups-hat-service.sh
 
 #copy the script to the init.d directory to run the script on startup
 sudo cp -v ups.sh /etc/init.d/ups.sh
 
-#update the rc file
+# update the rc file
 sudo update-rc.d ups.sh defaults
