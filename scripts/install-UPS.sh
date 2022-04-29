@@ -8,8 +8,8 @@
 sudo apt update; sudo apt install git -y
 
 # Clone the shell script from the Buyapi.ca repository
-#git clone https://github.com/hipi-io/ups-hat.git
-git clone https://github.com/Martin-HiPi/ups-hat.git
+git clone https://github.com/hipi-io/ups-hat.git
+#git clone https://github.com/Martin-HiPi/ups-hat.git
 
 # Navigate into the UPS script folder
 cd ups-hat/scripts
