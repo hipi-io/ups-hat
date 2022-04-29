@@ -50,4 +50,4 @@ sudo systemctl start hipi-io-ups-hat.service
 
 echo "Service hipi-io-ups-hat.service should be active!"
 #ps -aux | grep "hipi-io-ups-hat-service"
-sudo systemctl status hipi-io-ups-hat.service
+systemctl --no-pager status hipi-io-ups-hat.service
