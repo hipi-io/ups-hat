@@ -1,5 +1,5 @@
 # One-liner installation with defaults:
-  `curl https://raw.githubusercontent.com/hipi-io/ups-hat/main/scripts/install-UPS.sh | bash`
+  `curl https://raw.githubusercontent.com/hipi-io/ups-hat/main/systemd/install-UPS-systemd.sh | bash`
 
 ---
 # Manual installation
