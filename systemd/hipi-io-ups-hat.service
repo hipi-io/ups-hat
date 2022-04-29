@@ -1,0 +1,15 @@
+[Unit]
+Description=HiPi.io UPS hat service
+# inspired from https://github.com/ColonelGerdauf/ups/blob/master/scripts/std_linux.ups.service
+
+[Service]
+Type=exec
+KillMode=process
+ExecStart=/usr/local/sbin/hipi-io-ups-hat-service
+ExecStop=/bin/kill -s QUIT $MAINPID
+ExecReload=/bin/kill -s QUIT $MAINPID
+#ExitType=main
+
+[Install]
+WantedBy=multi-user.target
+#Alias=ups.service
