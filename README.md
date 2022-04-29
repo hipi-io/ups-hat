@@ -1,13 +1,17 @@
-## bash script to talk to the ups board
+# One-liner installation with defaults:
+  `curl https://raw.githubusercontent.com/Martin-HiPi/ups-hat/main/scripts/install-UPS.sh | bash`
 
-#change the permissions for the script 
+---
+# Manual installation
 
-  sudo chmod +x ups.sh
+## change the permissions for the script 
 
-#copy the script to the init.d directory to run the script on startup
+  `sudo chmod +x ups.sh`
 
-  sudo cp ups.sh /etc/init.d/
+## copy the script to the init.d directory to run the script on startup
 
-#update the rc file
+  `sudo cp ups.sh /etc/init.d/`
 
-  sudo update-rc.d ups.sh defaults
+## update the rc file
+
+  `sudo update-rc.d ups.sh defaults`

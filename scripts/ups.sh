@@ -1,4 +1,8 @@
 #!/bin/bash
+##################################################################
+# HiPi.io UPS hat service script
+# https://github.com/hipi-io/ups-hat
+##################################################################
 
 ### BEGIN INIT INFO
 # Provides: ups
@@ -6,13 +10,13 @@
 # Required-Stop: $remote_fs
 # Default-Start: 2 3 4 5
 # Default-Stop: 0 1 6
-# Short-Description: UPS Monitor
-# Description: Starts the Buy A Pi UPS HAT Monitor
+# Short-Description: UPS-hat Monitor
+# Description: Starts the HiPi-io UPS HAT Monitor
 ### END INIT INFO
 
 #GPIO17 (input) used to read current power status. 
 #0 - normal (or battery power switched on manually). 
-#1 - power fault, swithced to battery. 
+#1 - power fault, switched to battery. 
 echo 17 > /sys/class/gpio/export;
 echo in > /sys/class/gpio/gpio17/direction;
 
