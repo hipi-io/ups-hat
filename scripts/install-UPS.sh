@@ -7,7 +7,7 @@
 # Install git onto your pi
 sudo apt update; sudo apt install git -y
 
-# Clone the shell script from the Buyapi.ca repository
+# Clone the shell script from the HiPi.io repository
 git clone https://github.com/hipi-io/ups-hat.git
 #git clone https://github.com/Martin-HiPi/ups-hat.git
 
@@ -26,6 +26,7 @@ sudo cp -v ups.sh /etc/init.d/ups.sh
 # update the rc file
 sudo update-rc.d ups.sh defaults
 
-echo "Starting the service..."
-sudo systemctl start ups
-echo "Service active!"
+#echo "Starting the service..."
+#sudo systemctl start ups
+#echo "Service active!"
+echo "*** Reboot to activate the service! ***"
