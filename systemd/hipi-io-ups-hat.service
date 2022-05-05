@@ -4,12 +4,13 @@ Description=HiPi.io UPS hat service
 
 [Service]
 Type=exec
-KillMode=process
+KillMode=none
 ExecStart=/usr/local/sbin/hipi-io-ups-hat-service
-ExecStop=/bin/kill -s QUIT $MAINPID
-ExecReload=/bin/kill -s QUIT $MAINPID
+ExecStop=/usr/bin/touch /tmp/ups-hat.exit
+#ExecStop=/bin/kill -s QUIT $MAINPID; 
+#ExecReload=/bin/kill -s QUIT $MAINPID
 #ExitType=main
 
 [Install]
 WantedBy=multi-user.target
-#Alias=ups.service
+Alias=ups.service
