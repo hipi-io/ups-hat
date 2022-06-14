@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 ##################################################################
 # HiPi.io UPS hat service script
 # https://github.com/hipi-io/ups-hat
@@ -84,12 +84,12 @@ main_loop() {
 		ups_online_timer=$((ups_online_timer+1));
 
 		# toggled?
-		if  (( "$ups_online1" != "$ups_online2" )); then
+		if [ "$ups_online1" -ne "$ups_online2" ]; then
 			ups_online_timer=0;
 		fi
 
 		# reset all timers if ups is offline longer than 3s (no toggling detected)
-		if (("$ups_online_timer" > 30));
+		if [ "$ups_online_timer" -gt 30 ];
 		then
 			echo "$ups_online_timer";
 
@@ -105,7 +105,7 @@ main_loop() {
 
 		#echo "inval_power= "$inval_power;
 
-		if (( "$inval_power" == 1 )); then
+		if [ "$inval_power" -eq 1 ]; then
 			power_timer=$((power_timer+1));
 		else
 			power_timer=0;
@@ -114,7 +114,7 @@ main_loop() {
 		#echo "power_timer=     "$power_timer;
 
 		# If power was not restored in 60 seconds
-		if (( "$power_timer" == 600 )); then
+		if [ "$power_timer" -eq 600 ]; then
 			echo "Powering off..."
 			sleep 2;
 			systemctl poweroff; #turn off
