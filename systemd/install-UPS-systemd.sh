@@ -35,7 +35,7 @@ sudo systemctl stop hipi-io-ups-hat.service
 if [ -e /etc/init.d/ups.sh ]; then 
 	echo "Shutting down the UPS hat service..."
 	touch /tmp/ups-hat.exit
-	
+
 	sleep 5
 	
 	if [ -e /tmp/ups-hat.quit ]; then
@@ -46,7 +46,7 @@ if [ -e /etc/init.d/ups.sh ]; then
 		sudo killall "ups.sh"
 		sudo rm -v /tmp/ups-hat.*
 	fi
-	
+
 	echo "Removing SystemV service..."
 	sudo update-rc.d ups.sh disable
 	sudo rm -v /etc/init.d/ups.sh
