@@ -4,7 +4,7 @@
 ---
 # Manual installation
 
-## change the permissions for the script 
+## change the permissions for the script
 
   `sudo chmod +x ups.sh`
 

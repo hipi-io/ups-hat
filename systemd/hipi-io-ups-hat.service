@@ -7,7 +7,7 @@ Type=exec
 KillMode=none
 ExecStart=/usr/local/sbin/hipi-io-ups-hat-service
 ExecStop=/usr/bin/touch /tmp/ups-hat.exit
-#ExecStop=/bin/kill -s QUIT $MAINPID; 
+#ExecStop=/bin/kill -s QUIT $MAINPID;
 #ExecReload=/bin/kill -s QUIT $MAINPID
 #ExitType=main
 
