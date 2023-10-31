@@ -9,7 +9,7 @@ sudo apt update
 sudo apt install -y git
 sudo apt install -y python3-rpi.gpio
 sudo apt install -y python-rpi.gpio
-sudo apt insyall -y gpiod
+sudo apt install -y gpiod
 
 # Clone the shell script from the HiPi-io ups-hat repository
 git clone https://github.com/hipi-io/ups-hat.git  # Production repo
