@@ -60,7 +60,6 @@ do
 	if [ "$ups_online_timer" -gt 30 ]
 	then
 		echo "$ups_online_timer"
-
 		ups_online_timer=30
 		power_timer=0
 		inval_power=0

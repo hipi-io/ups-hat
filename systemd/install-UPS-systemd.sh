@@ -5,7 +5,11 @@
 ##################################################################
 
 # Install required packages onto your pi
-sudo apt update; sudo apt install -y git python-rpi.gpio python3-rpi.gpio gpiod
+sudo apt update
+sudo apt install -y git
+sudo apt install -y python3-rpi.gpio
+sudo apt install -y python-rpi.gpio
+sudo apt insyall -y gpiod
 
 # Clone the shell script from the HiPi-io ups-hat repository
 git clone https://github.com/hipi-io/ups-hat.git  # Production repo
@@ -28,15 +32,13 @@ sudo systemctl stop ups
 sudo systemctl stop hipi-io-ups-hat.service
 
 # Remove previous SysV copies of the service
-if [ -e /etc/init.d/ups.sh ]
-then
+if [ -e /etc/init.d/ups.sh ]; then 
 	echo "Shutting down the UPS hat service..."
 	touch /tmp/ups-hat.exit
 
 	sleep 5
-
-	if [ -e /tmp/ups-hat.quit ]
-	then
+	
+	if [ -e /tmp/ups-hat.quit ]; then
 		echo "... Service for UPS hat stopped!"
 		sudo rm -v /tmp/ups-hat.quit
 	else
