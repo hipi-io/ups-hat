@@ -18,13 +18,6 @@ git clone https://github.com/hipi-io/ups-hat.git  # Production repo
 # Navigate into the UPS script folder
 cd ups-hat
 
-# Make the service scripts executable
-sudo chmod -v +x scripts/ups.sh
-#sudo chmod -v +x scripts/gpiod/ups-gpiod.sh
-sudo chmod -v +x scripts/ups-set.py
-sudo chmod -v +x scripts/ups-reset.py
-
-
 # Stop and disable the existing service
 sudo systemctl disable ups
 sudo systemctl disable hipi-io-ups-hat.service
@@ -66,6 +59,12 @@ sudo chown -v root:root /etc/systemd/system/hipi-io-ups-hat.service
 sudo cp -v scripts/ups.sh /usr/local/sbin/hipi-io-ups-hat-service
 sudo cp -v scripts/ups-set.py /usr/local/sbin/hipi-io-ups-hat-gpio-set
 sudo cp -v scripts/ups-reset.py /usr/local/sbin/hipi-io-ups-hat-gpio-reset
+
+# Make the service scripts executable
+sudo chmod -v +x /usr/local/sbin/hipi-io-ups-hat-service
+#sudo chmod -v +x scripts/gpiod/ups-gpiod.sh
+sudo chmod -v +x /usr/local/sbin/hipi-io-ups-hat-gpio-set
+sudo chmod -v +x /usr/local/sbin/hipi-io-ups-hat-gpio-reset
 
 #sudo cp -v scripts/gpiod/ups-gpiod.sh /usr/local/sbin/hipi-io-ups-hat-service
 sudo chown -v root:root /usr/local/sbin/hipi-io-ups-hat-*
