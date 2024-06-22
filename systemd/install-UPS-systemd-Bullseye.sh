@@ -56,15 +56,15 @@ sudo cp -v systemd/hipi-io-ups-hat.service /etc/systemd/system/hipi-io-ups-hat.s
 sudo chown -v root:root /etc/systemd/system/hipi-io-ups-hat.service
 
 # copy the UPS hat script to /usr/local/sbin (Tertiary hierarchy for local data, specific to this host.)
-sudo cp -v scripts/ups.sh /usr/local/sbin/hipi-io-ups-hat-service
-sudo cp -v scripts/ups-set.py /usr/local/sbin/hipi-io-ups-hat-gpio-set
-sudo cp -v scripts/ups-reset.py /usr/local/sbin/hipi-io-ups-hat-gpio-reset
+sudo cp -v scripts/Bullseye/ups-gpiod.sh /usr/local/sbin/hipi-io-ups-hat-service
+#sudo cp -v scripts/ups-set.py /usr/local/sbin/hipi-io-ups-hat-gpio-set
+#sudo cp -v scripts/ups-reset.py /usr/local/sbin/hipi-io-ups-hat-gpio-reset
 
 # Make the service scripts executable
 sudo chmod -v +x /usr/local/sbin/hipi-io-ups-hat-service
 #sudo chmod -v +x scripts/gpiod/ups-gpiod.sh
-sudo chmod -v +x /usr/local/sbin/hipi-io-ups-hat-gpio-set
-sudo chmod -v +x /usr/local/sbin/hipi-io-ups-hat-gpio-reset
+#sudo chmod -v +x /usr/local/sbin/hipi-io-ups-hat-gpio-set
+#sudo chmod -v +x /usr/local/sbin/hipi-io-ups-hat-gpio-reset
 
 #sudo cp -v scripts/gpiod/ups-gpiod.sh /usr/local/sbin/hipi-io-ups-hat-service
 sudo chown -v root:root /usr/local/sbin/hipi-io-ups-hat-*
