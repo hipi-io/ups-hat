@@ -52,6 +52,14 @@ if [ -e /etc/init.d/ups.sh ]; then
 	echo
 fi
 
+# clean up old files
+echo "...Removing old files"
+sudo rm -v /etc/systemd/system/hipi-io-ups-hat.service
+sudo rm -v /usr/local/sbin/hipi-io-ups-hat-service
+sudo rm -v /usr/local/sbin/hipi-io-ups-hat-gpio-set
+sudo rm -v /usr/local/sbin/hipi-io-ups-hat-gpio-reset
+
+
 # copy the hipi-io-ups-hat.service unit file to the /etc/systemd/system directory to run the script on startup
 # Should we use /usr/local/lib/systemd/system, "for use by the system administrator when installing software locally"?
 echo "...Copying new files"
