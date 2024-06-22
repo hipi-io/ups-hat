@@ -41,6 +41,14 @@ ups_online1="0"
 ups_online2="0"
 ups_online_timer="0"
 
+trap_ctrlc() {
+    echo "Exiting..."
+	gpioset 0 18=1
+	exit
+}
+
+trap trap_ctrlc INT
+
 while true
 do
 	# Read GPIO27 pin value
