@@ -7,7 +7,7 @@
 # Install required packages onto your pi
 sudo apt update
 sudo apt install -y git
-sudo apt install -y python3-rpi.gpio
+#sudo apt install -y python3-rpi.gpio
 #sudo apt install -y python-rpi.gpio
 sudo apt install -y gpiod
 
