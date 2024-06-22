@@ -18,6 +18,7 @@ git clone https://github.com/Martin-HiPi/ups-hat.git  # Staging repo
 
 # Navigate into the UPS script folder
 cd ups-hat
+echo "...Source folder: $( pwd )"
 
 # Stop and disable the existing service
 echo "...Removing old scripts"
