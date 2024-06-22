@@ -5,6 +5,7 @@
 ##################################################################
 
 # Install required packages onto your pi
+echo "...Installing required packages"
 sudo apt update
 sudo apt install -y git
 #sudo apt install -y python3-rpi.gpio
@@ -19,6 +20,7 @@ git clone https://github.com/Martin-HiPi/ups-hat.git  # Staging repo
 cd ups-hat
 
 # Stop and disable the existing service
+echo "...Removing old scripts"
 sudo systemctl disable ups
 sudo systemctl disable hipi-io-ups-hat.service
 sudo systemctl stop ups
@@ -26,25 +28,25 @@ sudo systemctl stop hipi-io-ups-hat.service
 
 # Remove previous SysV copies of the service
 if [ -e /etc/init.d/ups.sh ]; then 
-	echo "Shutting down the UPS hat service..."
+	echo "___Shutting down the UPS hat service..."
 	touch /tmp/ups-hat.exit
 
 	sleep 5
 	
 	if [ -e /tmp/ups-hat.quit ]; then
-		echo "... Service for UPS hat stopped!"
+		echo "...Service for UPS hat stopped!"
 		sudo rm -v /tmp/ups-hat.quit
 	else
-		echo "... Force-stopping the service for UPS hat!"
+		echo "...Force-stopping the service for UPS hat!"
 		sudo killall "ups.sh"
 		sudo rm -v /tmp/ups-hat.*
 	fi
 
-	echo "Removing SystemV service..."
+	echo "___Removing SystemV service..."
 	sudo update-rc.d ups.sh disable
 	sudo rm -v /etc/init.d/ups.sh
 	sudo update-rc.d -f ups.sh remove
-	echo "SystemV UPS hat service removed."
+	echo "___SystemV UPS hat service removed."
 	echo
 	echo "*** REBOOT RECOMMENDED!!! ***"
 	echo
@@ -52,6 +54,7 @@ fi
 
 # copy the hipi-io-ups-hat.service unit file to the /etc/systemd/system directory to run the script on startup
 # Should we use /usr/local/lib/systemd/system, "for use by the system administrator when installing software locally"?
+echo "...Copying new files"
 sudo cp -v systemd/hipi-io-ups-hat.service /etc/systemd/system/hipi-io-ups-hat.service
 sudo chown -v root:root /etc/systemd/system/hipi-io-ups-hat.service
 
@@ -72,10 +75,10 @@ sudo chown -v root:root /usr/local/sbin/hipi-io-ups-hat-*
 # reload daemons
 sudo systemctl daemon-reload
 
-echo "Starting UPS hat service..."
+echo "...Starting UPS hat service..."
 sudo systemctl enable hipi-io-ups-hat.service --no-pager
 sudo systemctl start hipi-io-ups-hat.service --no-pager
 
-echo "Service hipi-io-ups-hat.service should be active!"
+echo "---Service hipi-io-ups-hat.service should be active!"
 #ps -aux | grep "hipi-io-ups-hat-service"
 sudo systemctl status hipi-io-ups-hat.service --no-pager
