@@ -12,8 +12,8 @@ sudo apt install -y python3-rpi.gpio
 sudo apt install -y gpiod
 
 # Clone the shell script from the HiPi-io ups-hat repository
-git clone https://github.com/hipi-io/ups-hat.git  # Production repo
-#git clone https://github.com/Martin-HiPi/ups-hat.git  # Staging repo
+#git clone https://github.com/hipi-io/ups-hat.git  # Production repo
+git clone https://github.com/Martin-HiPi/ups-hat.git  # Staging repo
 
 # Navigate into the UPS script folder
 cd ups-hat
