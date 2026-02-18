@@ -4,7 +4,7 @@ Description=HiPi.io UPS hat service
 
 [Service]
 Type=exec
-KillMode=none
+KillMode=mixed
 ExecStart=/usr/local/sbin/hipi-io-ups-hat-service
 ExecStop=/usr/bin/touch /tmp/ups-hat.exit
 #ExecStop=/bin/kill -s QUIT $MAINPID;
